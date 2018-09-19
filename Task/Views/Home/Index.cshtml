@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/index.css">
+</head>
+
+<div id="form">
+    <form method="post" enctype="multipart/form-data">
+        Enter word you are looking for : <input class="textinput" type="text" name="keyword" required />
+        <input class="uploadfile" type="file" name="files" id="files" multiple />
+        <input class="sumbitbutton" type="submit" value="submit" />
+    </form>
+</div>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+               <th>Sentences already looked for : </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+
+
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Sentence</td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</body>
